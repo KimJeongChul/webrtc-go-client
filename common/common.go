@@ -5,23 +5,23 @@ import (
 	"log"
 )
 
-func LogE(funcName string, logMsg ...interface{}) {
-	logStr := "[E] < " + funcName + " > "
+func LogE(packageName string, funcName string, logMsg ...interface{}) {
+	logStr := "[E] [" + packageName + "] < " + funcName + " > "
 	for _, item := range logMsg {
 		logStr += fmt.Sprint(item)
 	}
 	log.Println(logStr)
 }
-func LogI(funcName string, trxId string, logMsg ...interface{}) {
-	logStr := "[I] < " + funcName + " > "
+func LogI(packageName string, funcName string, trxId string, logMsg ...interface{}) {
+	logStr := "[I] [" + packageName + "] < " + funcName + " > "
 	for _, item := range logMsg {
 		logStr += fmt.Sprint(item)
 	}
 	log.Println(logStr)
 }
-func LogD(funcName string, trxId string, logMsg ...interface{}) {
+func LogD(packageName string, funcName string, trxId string, logMsg ...interface{}) {
 	//todo :: Debug Log가 켜져 있는 경우만 출력하도록
-	logStr := "[D] < " + funcName + " > "
+	logStr := "[D] [" + packageName + "] < " + funcName + " > "
 	for _, item := range logMsg {
 		logStr += fmt.Sprint(item)
 	}
